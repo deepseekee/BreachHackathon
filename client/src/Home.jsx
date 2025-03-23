@@ -28,14 +28,14 @@ const Home = () => {
 
          try {
             // Fetch user data
-            const userResponse = await axios.get("http://localhost:3001/home", {
+            const userResponse = await axios.get("https://www.secbreach-api.vercel.app/home", {
                headers: { token },
             });
             setUser(userResponse.data);
 
             // Fetch unread notifications
             const notificationsResponse = await axios.get(
-               "http://localhost:3001/notifications/unread-count",
+               "https://www.secbreach-api.vercel.app/notifications/unread-count",
                { headers: { token } }
             );
             const { unreadCount } = notificationsResponse.data;
@@ -43,7 +43,7 @@ const Home = () => {
                alert(`You have ${unreadCount} new notification${unreadCount > 1 ? "s" : ""}!`);
             }
 
-            const warningsResponse = await axios.get("http://localhost:3001/warnings", {
+            const warningsResponse = await axios.get("https://www.secbreach-api.vercel.app/warnings", {
                headers: { token },
             });
             setWarnings(warningsResponse.data);

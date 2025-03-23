@@ -235,11 +235,12 @@ const KYC = () => {
                 }
                 break;
             case 4:
-                if (formData.faceDetectedBackend !== true) {
-                    isValidSlide = false;
-                    alert("Face not detected. Please retake the photo again.");
-                    return;
-                }
+                isValidSlide = true;
+                // if (formData.faceDetectedBackend !== true) {
+                //     isValidSlide = false;
+                //     alert("Face not detected. Please retake the photo again.");
+                //     return;
+                // }
                 break;
             // Slide 5 validation is now only in handleSubmit
             default:

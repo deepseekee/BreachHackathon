@@ -20,7 +20,7 @@ const ManageComplaints = () => {
    const fetchComplaints = async () => {
       try {
          const token = localStorage.getItem('token');
-         const response = await axios.get('http://localhost:3001/complaints', {
+         const response = await axios.get('https://www.secbreach-api.vercel.app/complaints', {
             headers: { token }
          });
          setComplaints(response.data);
@@ -57,7 +57,7 @@ const ManageComplaints = () => {
       try {
          const token = localStorage.getItem('token');
          console.log(selectedComplaint._id)
-         await axios.put(`http://localhost:3001/complaints/${selectedComplaint._id}`, formData, {
+         await axios.put(`https://www.secbreach-api.vercel.app/complaints/${selectedComplaint._id}`, formData, {
             headers: { token }
          });
          showAlert('Complaint updated successfully', 'success');

@@ -12,7 +12,7 @@ const Notifications = () => {
     const fetchNotifications = async () => {
         try {
             const token = localStorage.getItem("token");
-            const response = await axios.get("http://localhost:3001/notifications", {
+            const response = await axios.get("https://www.secbreach-api.vercel.app/notifications", {
                 headers: { token }
             });
             setNotifications(response.data);
@@ -24,7 +24,7 @@ const Notifications = () => {
     const markAsRead = async (id) => {
         try {
             const token = localStorage.getItem("token");
-            await axios.put(`http://localhost:3001/notifications/${id}/read`, {}, {
+            await axios.put(`https://www.secbreach-api.vercel.app/notifications/${id}/read`, {}, {
                 headers: { token }
             });
             fetchNotifications(); // Refresh notifications after marking as read

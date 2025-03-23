@@ -18,7 +18,13 @@ const evRoute = require("./Routes/vehicleRoutes.js");
 // Middleware setup
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+    {
+        origin: 'https://secbreach-api.vercel.app',
+        methods: ['POST', 'GET','PUT','DELETE','OPTIONS'],
+        credentials: true,
+    }
+));
 // app.use(bodyParser.json({ limit: '500mb' })); 
 // app.use(bodyParser.urlencoded({ limit: '500mb', extended: true }));
 

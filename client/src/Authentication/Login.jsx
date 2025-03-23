@@ -14,8 +14,8 @@ function Login() {
 
     // Determine the login URL based on admin or user
     const url = isAdmin
-      ? "http://localhost:3001/adminLogin"
-      : "http://localhost:3001/login";
+      ? "https://www.secbreach-api.vercel.app/adminLogin"
+      : "https://www.secbreach-api.vercel.app/login";
 
     try {
       const response = await axios.post(url, { email, password });

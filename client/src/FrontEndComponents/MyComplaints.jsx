@@ -21,7 +21,7 @@ const MyComplaints = () => {
          }
 
          try {
-            const response = await axios.get("http://localhost:3001/complaints", {
+            const response = await axios.get("https://www.secbreach-api.vercel.app/complaints", {
                headers: {
                   token: `${token}`,
                },
@@ -39,7 +39,7 @@ const MyComplaints = () => {
    const deleteComplaint = async (id) => {
       const token = localStorage.getItem("token");
       try {
-         await axios.delete(`http://localhost:3001/complaints/${id}`, {
+         await axios.delete(`https://www.secbreach-api.vercel.app/complaints/${id}`, {
             headers: {
                token: `${token}`,
             },

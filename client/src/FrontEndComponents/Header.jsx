@@ -21,7 +21,7 @@ const Header = () => {
       }
 
       try {
-        const response = await axios.get("http://localhost:3001/home", {
+        const response = await axios.get("https://www.secbreach-api.vercel.app/home", {
           headers: { token },
         });
         setUser(response.data);

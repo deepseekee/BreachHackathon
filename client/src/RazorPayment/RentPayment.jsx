@@ -6,7 +6,7 @@ const RentPayment = () => {
 
   const handlePayment = async () => {
     try {
-      const { data } = await axios.post("http://localhost:3001/api/razorpay/create-order", {
+      const { data } = await axios.post("https://www.secbreach-api.vercel.app/api/razorpay/create-order", {
         rentAmount: 500,
         currency: "INR",
         user: { name: "Manan K", email: "manank@example.com", contact: "9999999999" },
@@ -27,7 +27,7 @@ const RentPayment = () => {
         name: "Rent Payment",
         description: "Rental Service - Vehicle Rent + Security Deposit",
         handler: async (response) => {
-          const verifyResponse = await axios.post("http://localhost:3001/api/razorpay/verify-payment", {
+          const verifyResponse = await axios.post("https://www.secbreach-api.vercel.app/api/razorpay/verify-payment", {
             ...response,
             user: { name: "Manan K", email: "manank@example.com", contact: "9999999999" },
             vehicle: { model: "Honda Activa", type: "2-wheeler" },

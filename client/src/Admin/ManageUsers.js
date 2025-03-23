@@ -27,11 +27,11 @@ const ManageUsers = () => {
          console.log("Token:", token);
 
          // First, test if the API is reachable
-         //const testResponse = await axios.get('http://localhost:3001/api/test');
+         //const testResponse = await axios.get('https://www.secbreach-api.vercel.app/api/test');
          //console.log("API Test Response:", testResponse.data);
 
          // Then try the users endpoint
-         const response = await axios.get('http://localhost:3001/admin/users', {
+         const response = await axios.get('https://www.secbreach-api.vercel.app/admin/users', {
             headers: { token }
          });
          console.log("Users Response:", response.data);
@@ -61,12 +61,12 @@ const ManageUsers = () => {
       try {
          const token = localStorage.getItem('token');
          if (selectedUser) {
-            await axios.put(`http://localhost:3001/admin/users/${selectedUser._id}`, formData, {
+            await axios.put(`https://www.secbreach-api.vercel.app/admin/users/${selectedUser._id}`, formData, {
                headers: { token }
             });
             showAlert('User updated successfully', 'success');
          } else {
-            await axios.post('http://localhost:3001/admin/users', formData, {
+            await axios.post('https://www.secbreach-api.vercel.app/admin/users', formData, {
                headers: { token }
             });
             showAlert('User created successfully', 'success');
@@ -93,7 +93,7 @@ const ManageUsers = () => {
       if (window.confirm('Are you sure you want to delete this user?')) {
          try {
             const token = localStorage.getItem('token');
-            await axios.delete(`http://localhost:3001/admin/users/${userId}`, {
+            await axios.delete(`https://www.secbreach-api.vercel.app/admin/users/${userId}`, {
                headers: { token }
             });
             showAlert('User deleted successfully', 'success');

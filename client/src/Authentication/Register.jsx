@@ -12,7 +12,7 @@ function RegisterForm() {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3001/register", { name, email, password });
+      await axios.post("https://www.secbreach-api.vercel.app/register", { name, email, password });
       alert("Registration successful!");
       navigate("/login");
     } catch (err) {

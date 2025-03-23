@@ -7,7 +7,7 @@ const TransactionHistory = () => {
   useEffect(() => {
     const fetchTransactions = async () => {
       try {
-        const { data } = await axios.get("http://localhost:3001/api/bookings");
+        const { data } = await axios.get("https://www.secbreach-api.vercel.app/api/bookings");
         setTransactions(data);
       } catch (error) {
         console.error("Error fetching transactions", error);

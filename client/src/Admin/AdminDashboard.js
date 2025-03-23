@@ -18,7 +18,7 @@ function AdminDashboard() {
    useEffect(() => {
       const fetchVehicleStats = async () => {
          try {
-            const response = await axios.get("http://localhost:3001/api/admin/vehicle-stats", {
+            const response = await axios.get("https://www.secbreach-api.vercel.app/api/admin/vehicle-stats", {
                headers: { Authorization: `Bearer ${token}` },
             });
             setVehicleStats(response.data);
@@ -29,7 +29,7 @@ function AdminDashboard() {
 
       const fetchVehicles = async () => {
          try {
-            const response = await axios.get("http://localhost:3001/api/admin/vehicles", {
+            const response = await axios.get("https://www.secbreach-api.vercel.app/api/admin/vehicles", {
                headers: { Authorization: `Bearer ${token}` },
             });
             setVehicles(response.data);
@@ -40,7 +40,7 @@ function AdminDashboard() {
 
       const fetchEvVehicles = async () => {
          try {
-            const response = await axios.get("http://localhost:3001/api/admin/ev-vehicles", {
+            const response = await axios.get("https://www.secbreach-api.vercel.app/api/admin/ev-vehicles", {
                headers: { Authorization: `Bearer ${token}` },
             });
             setEvVehicles(response.data);

@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000; // Use environment port or 5000
 
 app.use(cors(
     {
-        origin: 'https://secbreach.vercel.app',
+        origin: 'https://secbreach-api.vercel.app',
         methods: ['POST', 'GET','PUT','DELETE','OPTIONS'],
         credentials: true,
     }
