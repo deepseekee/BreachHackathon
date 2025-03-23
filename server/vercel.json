@@ -7,9 +7,10 @@
       }
     ],
     "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
+    {
+      "src": "/(.*)",
+      "dest": "/index.jsx",
+      "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+    }
+  ]
   }
